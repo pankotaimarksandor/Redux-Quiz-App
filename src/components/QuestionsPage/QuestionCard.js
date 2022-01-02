@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { removeQuestionAction, saveQuestionsToLocalAction } from '../../redux/actions/questionActions'
 
 const QuestionCard = (props) => {
-    const { question, answers, correct, id } = props
+    const { question, answers, id } = props
     const letters = ['A', 'B', 'C', 'D']
     const dispatch = useDispatch()
 
@@ -18,7 +18,7 @@ const QuestionCard = (props) => {
             <div className='question'>{question}</div>
             <div className='answers-box'>
                 {answers.map((answer, index) => (
-                    <div key={index} className={`answer ${correct === answer ? 'correct' : ''} ${index % 2 ? 'left' : 'right'}`}>
+                    <div key={index} className={`answer ${index % 2 ? 'left' : 'right'}`}>
                         <div className='answer-letter'>{letters[index]}</div>
                         <div className='answer-text'>{answer}</div>
                     </div>

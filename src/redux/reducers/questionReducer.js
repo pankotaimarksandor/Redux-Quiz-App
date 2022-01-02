@@ -14,7 +14,7 @@ const INITIAL_STATE = localStorage.getItem('quizQuestions')
 const shuffleQuestions = (questions, number) => {
     const shuffled = questions.sort(() => 0.5 - Math.random())
     const shuffledQuestions = shuffled.slice(0, number)
-    console.log(shuffledQuestions[0].answers)
+
     return shuffledQuestions
 }
 
@@ -23,18 +23,20 @@ export const questionReducer = (state = INITIAL_STATE, action) => {
 
     switch(type){
         case ADD_QUESTION:
+            alert('Added successfully!')
             return {
                 ...state,
                 questions: state.questions.concat(payload.newQuestion),
                 totalQuestions: state.totalQuestions + 1,
             }
         case REMOVE_QUESTION:
+            alert('Removed successfully!')
             return {
                 ...state,
                 questions: state.questions.filter((question) => question.id !== payload.id),
                 totalQuestions: state.totalQuestions - 1
             }
-        case SELECTED_QUESTION: 
+        case SELECTED_QUESTION:
             const question = state.questions.filter((question) => question.id === payload.id)
             return {
                 ...state,
@@ -46,6 +48,7 @@ export const questionReducer = (state = INITIAL_STATE, action) => {
                 selectedQuestion: {}
             }
         case EDIT_QUESTION:
+            alert('Edited successfully!')
             return {
                 ...state,
                 questions: state.questions.map((q) => 

@@ -20,6 +20,8 @@ const AddQuestionPage = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
+        if(question === '' || answers[0] === '' || answers[1] === '' || answers[2] === '' || answers[3] === '' ) return alert('All fields must be filled!')
+
         let newQuestion = {
             id: Date.now().toString(),
             question: question,

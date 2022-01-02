@@ -10,7 +10,6 @@ const QuestionsPage = () => {
                 <div className='subtext'>
                     Welcome to the question manager!<br/>
                     You can add, edit or remove questions.<br/>
-                    To play, you have to add at least 5 questions!
                 </div>
                 <div className='button-box center'>
                     <Link className='button link' to='/'>Back</Link>

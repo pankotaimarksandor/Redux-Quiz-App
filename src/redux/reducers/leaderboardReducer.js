@@ -13,6 +13,7 @@ export const leaderboardReducer = (state = INITIAL_STATE, action) => {
                 .concat(payload.newRecord)
                 .sort((a, b) => b.points - a.points)
         case CLEAR_LEADERBOARD:
+            alert('Cleared successfully!')
             return state = []
         case SAVE_LEADERBOARD:
             localStorage.setItem('quizLeaderboard', JSON.stringify(state))

@@ -42,6 +42,8 @@ const EditQuestionPage = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
+        if(question === '' || answers[0] === '' || answers[1] === '' || answers[2] === '' || answers[3] === '' ) return alert('All fields must be filled!')
+
         let editedQuestion = {
             id: id,
             question: question,
