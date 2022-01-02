@@ -1,0 +1,21 @@
+@import '../../styles/colors.scss';
+
+.title {
+    .check {
+        display: flex;
+        padding: 2px;
+        align-items: center;
+
+        svg {
+            margin: 5px 0 0 5px;
+        }
+    
+        &.correct svg {
+            color: $bg-correct;
+        }
+
+        &.incorrect svg {
+            color: $bg-incorrect;
+        }
+    }
+}

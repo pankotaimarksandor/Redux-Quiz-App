@@ -1,0 +1,17 @@
+@import '../../styles/colors.scss';
+
+.records {
+
+
+    .record {
+        display: grid;
+        grid-template-columns: 80px 120px 100px 100px 100px;
+        padding: 5px;
+        align-items: center;
+        border-bottom: 1px solid $primary-color;
+
+        .record-item {
+            padding: 5px;
+        }
+    }
+}

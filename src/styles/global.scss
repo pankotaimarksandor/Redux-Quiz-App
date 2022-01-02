@@ -1,0 +1,218 @@
+@import './colors.scss';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $primary-color;
+    width: 100%;
+    min-height: 100vh;
+    color: $primary-font-color;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: $secondary-font-color;
+}
+
+ul {
+    list-style: none;
+}
+
+h2 {
+    margin-left: 10px;
+}
+
+.app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.wrapper {
+    background: $secondary-color;
+    color: $secondary-font-color;
+    padding: 20px;
+    max-width: 600px;
+    border-radius: 15px;
+    margin-top: 5px;
+
+    &.quiz {
+        width: 600px;
+    }
+}
+
+.subtext {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+input[type=text] {
+    border: none;
+    outline: none;
+    width: 100%;
+    border-bottom: 2px dotted $primary-color;
+
+    &:focus {
+        border-bottom: 2px dotted $bg-focus;
+    }
+}
+
+button {
+    border: none;
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+}
+
+.button-box {
+    display: flex;
+    width: 100%;
+    text-align: center;
+
+    &.center {
+        justify-content: center;
+    }
+
+    &.right {
+        justify-content: flex-end;
+    }
+
+    &.horizontal {
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+.button {
+    padding: 5px 15px;
+    transition: all 0.3s;
+    color: $primary-font-color;
+    border-radius: 10px;
+    margin: 5px;
+    
+
+    &.link {
+        background-color: $btn-bg-link;
+
+        &:hover {
+            background-color: $btn-bg-link-hover;
+            transition: all 0.3s;
+        }
+    }
+
+    &.add {
+        background-color: $btn-bg-add;
+
+        &:hover {
+            background-color: $btn-bg-add-hover;
+            transition: all 0.3s;
+        }
+    }
+
+    &.edit {
+        background-color: $btn-bg-edit;
+
+        &:hover {
+            background-color: $btn-bg-edit-hover;
+            transition: all 0.3s;
+        }
+    }
+
+    &.delete {
+        background-color: $btn-bg-delete;
+
+        &:hover {
+            background-color: $btn-bg-delete-hover;
+            transition: all 0.3s;
+        }
+    }
+
+    &.disabled {
+        pointer-events: none;
+        background-color: $btn-bg-disabled;
+    }
+}
+
+.question {
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.answers-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .answer {
+        width: 48%;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        border: 2px solid $primary-color;
+        margin: 5px 0;
+        
+        .answer-letter {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            border-right: 1px solid $primary-color;
+        }
+    
+        .answer-text {
+            padding: 10px 15px;
+        }
+
+        &.left {
+            margin-left: 5px;
+        }
+
+        &.right {
+            margin-right: 5px;
+        }
+    
+        &.correct {
+            background-color: $bg-correct;
+            color: $primary-font-color;
+        }
+    
+        &.incorrect {
+            background-color: $bg-incorrect;
+            color: $primary-font-color;
+        }
+
+        &.selected {
+            background-color: $bg-selected;
+            color: $primary-font-color;
+        }
+
+        &.disabled {
+            pointer-events: none;
+        }
+    }
+}
+
+@media screen and (max-width: 762px) {
+    .wrapper {
+        width: auto;
+    }
+    .answers-box {
+        .answer {
+            width: 100%;
+
+            &.left,
+            &.right {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+
+    }
+}
